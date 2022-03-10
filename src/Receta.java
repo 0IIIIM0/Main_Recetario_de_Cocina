@@ -36,4 +36,21 @@ public class Receta {
     public void setPasos(ArrayList<String> pasos) {
         this.pasos = pasos;
     }
+
+    public void mostrarIngredientes(){
+        for (Ingrediente ingrediente : ingredientes){
+            System.out.println(ingrediente);
+        }
+        //como sacar el tamaño de un arraylist
+        for (int i =0; i< ingredientes.size();i++){
+            System.out.println(i+" - "+ingredientes.get(i));
+        }
+    }
+
+
+
+
+
+
+
 }
