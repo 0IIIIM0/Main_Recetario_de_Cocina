@@ -5,6 +5,8 @@ public class Ingrediente {
     private boolean salado;
     private double peso; // kg,l
 
+
+
     public String getNombre() {
         return nombre;
     }
