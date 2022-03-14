@@ -1,16 +1,22 @@
 import java.util.ArrayList;
 
 public class Recetario {
-    private ArrayList<Recetario>recetarios;
+    private ArrayList<Receta>recetas;
     private String titulo; //nacho recetas
     private String autor; //nacho
 
-    public ArrayList<Recetario> getRecetarios() {
-        return recetarios;
+    public Recetario(ArrayList<Receta> recetas, String titulo, String autor) {
+        this.recetas = recetas;
+        this.titulo = titulo;
+        this.autor = autor;
     }
-                                       //tipo de dato que esta recibiendo <> dentro
-    public void setRecetarios(ArrayList<Recetario> recetarios) {
-        this.recetarios = recetarios;
+
+    public ArrayList<Receta> getRecetas() {
+        return recetas;
+    }
+
+    public void setRecetas(ArrayList<Receta> recetas) {
+        this.recetas = recetas;
     }
 
     public String getTitulo() {
@@ -29,16 +35,11 @@ public class Recetario {
         this.autor = autor;
     }
 
-    public Recetario(ArrayList<Recetario> recetarios, String titulo, String autor) {
-        this.recetarios = recetarios;
-        this.titulo = titulo;
-        this.autor = autor;
-    }
     public void mostrarRecetario(){
         System.out.println(titulo);
         System.out.println(autor);
-        for(Recetario recetario: recetarios){
-            recetario.mostrarRecetario();
+        for(Receta receta: recetas){
+            receta.mostrarReceta();
         }
     }
 }
