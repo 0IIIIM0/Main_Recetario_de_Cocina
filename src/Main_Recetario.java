@@ -27,12 +27,16 @@ public class Main_Recetario {
         //crear algunas recetas
 
         Receta huevosJamon = new Receta(
-                "jamon con huevo",
+
                 15.50,
                 new ArrayList<>(Arrays.asList(objetojamon,objetolechuga,objetotortilla,objetoaceite,objetohuevo,objetojitomate,objetokatsup,objetosal)),
-                new  ArrayList<>(Arrays.asList("prender la estufa","poner un recipiente","poner aceite","quebrar el huebo en el sarten","poner sal"))
+                new  ArrayList<>(Arrays.asList("prender la estufa","poner un recipiente","poner aceite","quebrar el huebo en el sarten","poner sal")),"JAMON CON HUEVO"
         );
         //crear un recetario y guardar las recetas en el recetario
+        // Arratlist<Receta> recetasActuales = new Arraylist<>(Arrays.asList(huevocon jamon));
+        Recetario miRecetario = new Recetario(
+                new ArrayList<>(Arrays.asList(huevosJamon)),"Huevo con jamon","Nacho"
+        );
         //¿como hacer una nueva receta ?
         //abrir un menu
         //desplegar los ingredientes disponibles y ponerles un numero
