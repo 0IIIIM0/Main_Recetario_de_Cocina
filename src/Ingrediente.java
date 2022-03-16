@@ -35,7 +35,12 @@ public class Ingrediente {
         this.nombre = nombre;
         this.salado = salado;
         this.peso = peso;
-        System.out.println("Ingrediente creado ");
+       // System.out.println("Ingrediente creado ");
 
     }
+    public Ingrediente (){}
+
+    //public String toString(){
+      //  return nombre;        en caso de querer poner to string solo ponemos el .getNombre
+    //}
 }

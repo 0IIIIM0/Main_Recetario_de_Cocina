@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main_Recetario {
     public static void main(String[] args) {
-    //crear algunos ingredientes
+
+        //crear algunos ingredientes
+
         Ingrediente objetojamon =new Ingrediente("jamon",true,500);
         Ingrediente objetohuevo = new Ingrediente("huevo",true,800);
         Ingrediente objetoaceite= new Ingrediente("aceite",false,20);
@@ -12,7 +15,11 @@ public class Main_Recetario {
         Ingrediente objetojitomate= new Ingrediente("jitomate",false,400);
         Ingrediente objetokatsup =new Ingrediente("katsup",true,60);
         Ingrediente objetolechuga =new Ingrediente("lechuga",false,300);
+
+
         //guardar los ingredientes en un arraylist
+
+
         //ArraysList<Ingrediente> ingredientesDispo = new ArrayList<>(Arrays.asList(sal,jitomate);
 
         ArrayList<Ingrediente>ingredientesDisponible = new ArrayList<>();
@@ -24,19 +31,22 @@ public class Main_Recetario {
         ingredientesDisponible.add(objetojitomate);
         ingredientesDisponible.add(objetokatsup);
         ingredientesDisponible.add(objetolechuga);
+
         //crear algunas recetas
 
         Receta huevosJamon = new Receta(
-
                 15.50,
                 new ArrayList<>(Arrays.asList(objetojamon,objetolechuga,objetotortilla,objetoaceite,objetohuevo,objetojitomate,objetokatsup,objetosal)),
                 new  ArrayList<>(Arrays.asList("prender la estufa","poner un recipiente","poner aceite","quebrar el huebo en el sarten","poner sal")),"JAMON CON HUEVO"
         );
         //crear un recetario y guardar las recetas en el recetario
+
         // Arratlist<Receta> recetasActuales = new Arraylist<>(Arrays.asList(huevocon jamon));
         Recetario miRecetario = new Recetario(
                 new ArrayList<>(Arrays.asList(huevosJamon)),"Huevo con jamon","Nacho"
         );
+
+
         //¿como hacer una nueva receta ?
         //abrir un menu
         //desplegar los ingredientes disponibles y ponerles un numero
@@ -45,6 +55,61 @@ public class Main_Recetario {
         //los traigo con un get (indice -1)
         //para ingresar varios ingredientes a la vez uso un do while con una bandera que es cero
 
+        // mostrar las opciones que el usuario tiene
+
+        System.out.println("Bienvenido, elige una opción:");
+        System.out.println("1. Agregar un ingrediente nuevo.");
+        System.out.println("2. Agregar receta nueva.");
+        System.out.println("3. Ver mi recetario");
+        //pendiente opcion para salir
+
+        Scanner scanner = new Scanner(System.in);
+
+        int respuesta=0;
+
+        respuesta= scanner.nextInt();
+
+        switch (respuesta){
+
+            case 1:
+                Ingrediente nuevo = new Ingrediente();
+                System.out.println("Ingresa el nombre del ingrediente");
+                nuevo.setNombre(scanner.next());
+                System.out.println("Ingresa la cantidad");
+                nuevo.setPeso(scanner.nextDouble());
+                System.out.println("¿Tu ingrediente es saladap? 1.Sí\t 2. No");
+                if (scanner.nextInt()==1){
+                    nuevo.setSalado(true);
+                }else{
+                    nuevo.setSalado(false);
+                }
+                ingredientesDisponible.add(nuevo);
+                break;
+
+            case 2:
+                Receta nueva = new Receta();
+                System.out.println("ingresa la nueva receta");
+                nueva.setNombre(scanner.next());
+                System.out.println("Ingresa el tiempo de preparacion");
+                nueva.setTiempoPreparacion(scanner.nextDouble());
+                System.out.println("los ingredientes disponibles son: ");
+                for (int i = 0; i < ingredientesDisponible.size(); i++) {
+                    System.out.println(i+1+ ". " + ingredientesDisponible.get(i).getNombre());
+                }
+
+                ArrayList<Ingrediente>ingredientesReceta = new ArrayList<>();
+                System.out.println("ingrese el numero correspondiente del ingrediente y da enter, " +
+                        "si ya no queire agregar mas escribe 0");
+                do {
+                    if (respuesta !=0){
+                        ingredientesReceta.add(ingredientesDisponible.get(respuesta-1));
+                    }
+
+                }while (respuesta!=0);
+                break;
+            case 3:
+                break;
+        }
 
 
 
