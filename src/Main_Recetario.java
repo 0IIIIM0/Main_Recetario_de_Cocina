@@ -68,13 +68,14 @@ public class Main_Recetario {
 
         int respuesta=0;
 
-        respuesta= scanner.nextInt();
+
         do {
             System.out.println("Bienvenido, elige una opción:");
             System.out.println("1. Agregar un ingrediente nuevo.");
             System.out.println("2. Agregar receta nueva.");
             System.out.println("3. Ver mi recetario");
             System.out.println("0  -Salir");
+            respuesta= scanner.nextInt();
             switch (respuesta) {
 
                 case 1:
