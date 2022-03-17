@@ -40,7 +40,7 @@ public class Ingrediente {
     }
     public Ingrediente (){}
 
-    //public String toString(){
-      //  return nombre;        en caso de querer poner to string solo ponemos el .getNombre
-    //}
+    public String toString(){
+        return nombre;      //  en caso de querer poner to string solo ponemos el .getNombre
+    }
 }
