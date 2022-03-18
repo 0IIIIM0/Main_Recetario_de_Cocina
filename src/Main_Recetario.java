@@ -74,6 +74,8 @@ public class Main_Recetario {
             System.out.println("1. Agregar un ingrediente nuevo.");
             System.out.println("2. Agregar receta nueva.");
             System.out.println("3. Ver mi recetario");
+            System.out.println("4. Eliminar un ingrediente");
+            System.out.println("5. Elminar una receta");
             System.out.println("0  -Salir");
             respuesta= scanner.nextInt();
             switch (respuesta) {
@@ -138,6 +140,29 @@ public class Main_Recetario {
 
                 case 3:
                     miRecetario.mostrarRecetario();
+                    break;
+                case 4:
+                    int ingrediente_A_Eliminar=0;
+                    System.out.println("ingresa el numero del ingrediente que deseas eliminar: ");
+                    for (int i = 0; i < ingredientesDisponible.size(); i++) {
+                        System.out.println(i + 1 + ". " + ingredientesDisponible.get(i).getNombre());
+
+                    }
+                    ingrediente_A_Eliminar=scanner.nextInt();
+                    ingredientesDisponible.remove(ingrediente_A_Eliminar-1);
+
+                    break;
+
+                case 5:
+                    int receta_A_Eliminar=0;
+                    System.out.println("ingresa el numero del ingrediente que deseas eliminar: ");
+                    for (int i = 0; i < miRecetario.getRecetas().size(); i++) {
+                        System.out.println(i + 1 + ". " + miRecetario.getRecetas().get(i).getNombre());
+
+                    }
+                    receta_A_Eliminar=scanner.nextInt();
+                    miRecetario.getRecetas().remove(receta_A_Eliminar-1);
+
                     break;
             }
 
